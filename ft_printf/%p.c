@@ -2,25 +2,28 @@
 
 int handle_pointer(void *ptr)
 {
-    uintptr_t addr = (uintptr_t)ptr;
-    char hex_string[20];
-    char *buffer;
-    size_t str_len;
-    int len;
-
-    str_len = strlen(ft_ulltoa(addr, hex_string, 16)) + 2; // add 2 for "0x" prefix
-    buffer = (char *)malloc((str_len + 1) * sizeof(char));
-    if (!buffer)
+    const uintptr_t addr = (uintptr_t) ptr;
+    const size_t hex_len = sizeof(uintptr_t) * 2; // hexadecimal length of uintptr_t
+    const char hex_digits_lower[] = "0123456789abcdef";
+    const size_t prefix_len = 2; // "0x" prefix length
+    const size_t buffer_len = prefix_len + hex_len + 1; // add 1 for null-terminator
+    char *buffer = (char *) malloc(buffer_len);
+    if (!buffer) {
         return -1;
+    }
 
     buffer[0] = '0';
     buffer[1] = 'x';
-    strncpy(buffer + 2, hex_string, str_len - 2);
-    buffer[str_len] = '\0';
 
-    len = write(1, buffer, str_len);
+    for (size_t i = 0; i < hex_len; i++) {
+        const uint8_t nibble = (addr >> ((hex_len - i - 1) * 4)) & 0xf;
+        buffer[i + prefix_len] = hex_digits_lower[nibble];
+    }
+    buffer[buffer_len - 1] = '\0';
 
+    const int len = write(1, buffer, buffer_len - 1);
     free(buffer);
 
     return len;
 }
+

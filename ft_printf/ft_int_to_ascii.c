@@ -1,6 +1,6 @@
 #include "myprint.h"
 
-void ft_int_to_ascii(int num, char *str)
+void ft_int_to_ascii(long long num, char *str)
 {
     int i = 0;
     int is_negative = 0;

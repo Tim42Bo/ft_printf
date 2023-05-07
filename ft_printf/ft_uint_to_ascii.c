@@ -1,6 +1,6 @@
 #include "myprint.h"
 
-void ft_uint_to_ascii(unsigned int num, char* buffer)
+void ft_uint_to_ascii(unsigned long long num, char *buffer)
 {
     int len = ft_uint_len(num);
     int i = len - 1;
