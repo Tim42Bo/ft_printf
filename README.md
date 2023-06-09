@@ -27,7 +27,7 @@
 3. If you want to compile it with your libft implement following in your MAKEFILE
    gcc -Wall -Wextra -Werror -I includes/ -L . -lftprintf -o your_program main.c
 
-Supported Format Specifiers
+## Supported Format Specifiers
 %d, %i: Signed decimal integer.
 %u: Unsigned decimal integer.
 %x, %X: Unsigned hexadecimal integer (lowercase/uppercase).
@@ -39,7 +39,7 @@ Supported Format Specifiers
 For a complete list of supported format specifiers and their usage, please refer to the ft_printf.h header file.
 
 
-Examples:
+## Examples:
 
 #include "ft_printf.h"
 
