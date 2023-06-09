@@ -20,7 +20,7 @@
 
 1. Clone the repository:
 
-   git clone https://github.com/your-username/ft_printf.git
+   git clone https://github.com/Tim42Bo/ft_printf.git
    
 2. Include the "ft_printf" function in your project:
    #include "ft_printf.h"
