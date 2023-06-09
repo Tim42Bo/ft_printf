@@ -8,7 +8,6 @@
 - [Usage](#usage)
 - [Supported Format Specifiers](#supported-format-specifiers)
 - [Examples](#examples)
-- [Contributing](#contributing)
 
 ## Features
 
