@@ -51,7 +51,9 @@ For a complete list of supported format specifiers and their usage, please refer
 #include "ft_printf.h"
 
 int main(void)
+
 {
+
     ft_printf("Integer: %d\n", 42);
     ft_printf("Hexadecimal: %x\n", 255);
     ft_printf("String: %s\n", "Hello, world!");
