@@ -29,12 +29,19 @@
 
 ## Supported Format Specifiers
 %d, %i: Signed decimal integer.
+
 %u: Unsigned decimal integer.
+
 %x, %X: Unsigned hexadecimal integer (lowercase/uppercase).
+
 %c: Character.
+
 %s: String.
+
 %p: Pointer address.
+
 %f: Floating-point number.
+
 
 For a complete list of supported format specifiers and their usage, please refer to the ft_printf.h header file.
 
