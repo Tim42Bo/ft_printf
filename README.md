@@ -48,17 +48,15 @@ For a complete list of supported format specifiers and their usage, please refer
 
 ## Examples:
 
-#include "ft_printf.h"
-
-int main(void)
-
-{
-
-    ft_printf("Integer: %d\n", 42);
-    ft_printf("Hexadecimal: %x\n", 255);
-    ft_printf("String: %s\n", "Hello, world!");
-    return (0);
-}
+    #include "ft_printf.h"
+    
+    int  main(void)
+    {
+      ft_printf("Integer: %d\n", 42);
+      ft_printf("Hexadecimal: %x\n", 255);
+      ft_printf("String: %s\n", "Hello, world!");
+      return (0);
+    }
 
 Contributing
 Contributions to the ft_printf project are welcome! If you encounter any bugs, issues, or have suggestions for improvements, please feel free to open an issue or submit a pull request.
