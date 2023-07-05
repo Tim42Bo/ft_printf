@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   putils.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tbornema <tbornema@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: sung-hle <sung-hle@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 04:57:49 by tbornema          #+#    #+#             */
-/*   Updated: 2023/07/03 13:37:37 by tbornema         ###   ########.fr       */
+/*   Updated: 2023/07/05 21:22:17 by sung-hle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	ft_write_buffer(const size_t buffer_len)
 
 void	ft_handle_null_pointer(void)
 {
-	write(1, "(nil)\n", 5);
+	write(1, "(nil)", 5);
 }
 
 size_t	ft_handle_non_null_pointer(void *ptr)
@@ -65,7 +65,7 @@ size_t	ft_handle_non_null_pointer(void *ptr)
 	hex_len = ft_ptrlen(addr);
 	hexlower = "0123456789abcdef";
 	prefix_len = 2;
-	buffer_len = prefix_len + hex_len + 1;
+	buffer_len = prefix_len + hex_len;
 	ft_initialize_buffer(buffer_len);
 	g_bal.i = 0;
 	g_bal.buffer[0] = '0';
@@ -76,7 +76,7 @@ size_t	ft_handle_non_null_pointer(void *ptr)
 		g_bal.buffer[g_bal.i + prefix_len] = hexlower[g_bal.nibble];
 		g_bal.i++;
 	}
-	g_bal.buffer[buffer_len - 1] = '\0';
+	// g_bal.buffer[buffer_len - 1] = '\0';
 	ft_write_buffer(buffer_len);
 	return (buffer_len);
 }

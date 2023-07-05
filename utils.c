@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tbornema <tbornema@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: sung-hle <sung-hle@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 06:04:11 by tbornema          #+#    #+#             */
-/*   Updated: 2023/07/03 13:30:07 by tbornema         ###   ########.fr       */
+/*   Updated: 2023/07/05 20:49:54 by sung-hle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ size_t	ft_strlen(const char *str)
 	size_t	len;
 
 	len = 0;
+	if (!str)
+		return (0);
 	while (str[len] != '\0')
 		len++;
 	return (len);

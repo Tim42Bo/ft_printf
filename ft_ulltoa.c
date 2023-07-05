@@ -1,33 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   %s.c                                               :+:      :+:    :+:   */
+/*   ft_ulltoa.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tbornema <tbornema@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/30 05:55:53 by tbornema          #+#    #+#             */
-/*   Updated: 2023/05/30 05:55:53 by tbornema         ###   ########.fr       */
+/*   Created: 2023/06/05 08:39:36 by tbornema          #+#    #+#             */
+/*   Updated: 2023/06/05 08:39:36 by tbornema         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_handle_string(va_list args)
+char	*ft_ulltoa(unsigned long long n)
 {
-	char	*arg;
-	size_t	len;
-	int		returnlen;
-	char	*buffer;
+	char				*str;
+	unsigned long long	num;
+	int					len;
 
-	returnlen = 0;
-	arg = va_arg(args, char *);
-	len = ft_strlen(arg);
-	buffer = (char *)malloc((len + 1) * sizeof(char));
-	if (!buffer)
-		return (-1);
-	ft_strncpy(buffer, arg, len);
-	buffer[len] = '\0';
-	returnlen = write(1, buffer, len);
-	free(buffer);
-	return (returnlen);
+	// str = '\0';
+	num = n;
+	len = 0;
+	while (num > 0)
+	{
+		len++;
+		num /= 10;
+	}
+	str = (char *)malloc((len + 1) * sizeof(char));
+	if (!str)
+		return (NULL);
+	str[len] = '\0';
+	while (n > 0)
+	{
+		len--;
+		str[len] = (n % 10) + '0';
+		n /= 10;
+	}
+	return (str);
 }

@@ -20,6 +20,8 @@ int	ft_printf(const char *format, ...)
 
 	i = 0;
 	len = 0;
+	if (!format)
+		return (-1);
 	va_start(args, format);
 	while (format[i])
 	{
@@ -36,7 +38,8 @@ int	ft_printf(const char *format, ...)
 	return (len);
 }
 
-int main() {
+ 
+/* int main() {
    
     int num = -123;
     int num2 = -123;
@@ -145,3 +148,4 @@ int main() {
     
     return 0;
 }
+ */
