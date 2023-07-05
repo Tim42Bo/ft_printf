@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   unknown.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tbornema <tbornema@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: sung-hle <sung-hle@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 11:03:57 by tbornema          #+#    #+#             */
-/*   Updated: 2023/06/09 06:12:56 by tbornema         ###   ########.fr       */
+/*   Updated: 2023/07/05 21:26:40 by sung-hle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,5 @@
 int	ft_handle_unknown(const char *fmt)
 {
 	write(1, "%", 1);
-	write(1, fmt, 1);
 	return (1);
 }
