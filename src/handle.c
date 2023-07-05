@@ -12,45 +12,48 @@
 
 #include "ft_printf.h"
 
-static t_globalvariable	g_lobal;
-
 int	ft_handle_placeholder_1(const char *fmt, va_list args)
 {
-	t_globalvariable	g_lobal;
+	int		len;
+	int		iarg;
+	void	*varg;
 
-	g_lobal.len = 0;
+	len = 0;
 	if (*fmt == 'c')
-		g_lobal.len += ft_handle_char(args);
+		len += ft_handle_char(args);
 	else if (*fmt == 's')
-		g_lobal.len += ft_handle_string(args);
+		len += ft_handle_string(args);
 	else if (*fmt == 'p')
 	{
-		g_lobal.varg = va_arg(args, void *);
-		g_lobal.len += ft_handle_pointer(g_lobal.varg);
+		varg = va_arg(args, void *);
+		len += ft_handle_pointer(varg);
 	}
 	else if (*fmt == 'd' || *fmt == 'i')
 	{
-		g_lobal.iarg = va_arg(args, int);
-		g_lobal.len += ft_handle_decimal(g_lobal.iarg);
+		iarg = va_arg(args, int);
+		len += ft_handle_decimal(iarg);
 	}
-	return (g_lobal.len);
+	return (len);
 }
 
 int	ft_handle_placeholder_2(const char *fmt, va_list args)
 {
-	g_lobal.len = 0;
+	int	len;
+	int	uarg;
+
+	len = 0;
 	if (*fmt == 'u')
-		g_lobal.len += ft_handle_unsigned_decimal(args);
+		len += ft_handle_unsigned_decimal(args);
 	else if (*fmt == 'x' || *fmt == 'X')
 	{
-		g_lobal.uarg = va_arg(args, unsigned int);
-		g_lobal.len += ft_handle_hexadecimal(g_lobal.uarg, *fmt);
+		uarg = va_arg(args, unsigned int);
+		len += ft_handle_hexadecimal(uarg, *fmt);
 	}
 	else if (*fmt == '%')
-		g_lobal.len += ft_handle_percent();
+		len += ft_handle_percent();
 	else
-		g_lobal.len += ft_handle_unknown(fmt);
-	return (g_lobal.len);
+		len += ft_handle_unknown(fmt);
+	return (len);
 }
 
 int	ft_handle_placeholder(const char *fmt, va_list args)

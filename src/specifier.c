@@ -6,7 +6,7 @@
 /*   By: tbornema <tbornema@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 10:59:29 by tbornema          #+#    #+#             */
-/*   Updated: 2023/06/09 06:12:50 by tbornema         ###   ########.fr       */
+/*   Updated: 2023/07/03 13:36:13 by tbornema         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_is_specifier_type(char c)
 		return (c == 'd' || c == 'i' || c == 'u' || c == 'x');
 	if (c == 'X' || c == 'c' || c == 's' || c == 'p' || c == '%')
 		return (c == 'X' || c == 'c' || c == 's' || c == 'p' || c == '%');
-	return 0;
+	return (0);
 }
 
 int	ft_specifier_length(const char *specifier)

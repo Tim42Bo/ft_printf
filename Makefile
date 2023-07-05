@@ -6,7 +6,7 @@
 #    By: tbornema <tbornema@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/08 11:09:15 by tbornema          #+#    #+#              #
-#    Updated: 2023/06/09 06:30:24 by tbornema         ###   ########.fr        #
+#    Updated: 2023/07/05 18:52:41 by tbornema         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,8 +18,8 @@ SRCS = $(wildcard $(SRC_DIR)*.c)
 OBJS = $(patsubst $(SRC_DIR)%.c,$(OBJ_DIR)%.o,$(SRCS))
 DEPS = $(wildcard $(INC_DIR)*.h)
 
-NAME = ft_printf
-CC = gcc
+NAME = libftprintf.a
+CC = cc
 CFLAGS = -Wall -Wextra -Werror
 VALGRIND = valgrind --leak-check=full --track-origins=yes
 

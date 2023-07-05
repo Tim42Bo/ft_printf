@@ -12,12 +12,12 @@
 
 #include "ft_printf.h"
 
-static t_globalvariable	g_lobal;
-
 int	ft_handle_decimal(int arg)
 {
 	int		ret;
 	int		neg;
+	int		len;
+	char	*buffer;
 
 	neg = 0;
 	if (arg < 0)
@@ -25,14 +25,14 @@ int	ft_handle_decimal(int arg)
 		neg = 1;
 		arg = -arg;
 	}
-	g_lobal.len = ft_numlen(arg) + neg;
-	g_lobal.buffer = (char *) malloc((g_lobal.len + 1) * sizeof(char));
-	if (!g_lobal.buffer)
+	len = ft_numlen(arg) + neg;
+	buffer = (char *) malloc((len + 1) * sizeof(char));
+	if (!buffer)
 		return (-1);
 	if (neg)
-		g_lobal.buffer[0] = '-';
-	ft_int_to_ascii(arg, g_lobal.buffer + neg);
-	ret = write(1, g_lobal.buffer, g_lobal.len);
-	free(g_lobal.buffer);
+		buffer[0] = '-';
+	ft_int_to_ascii(arg, buffer + neg);
+	ret = write(1, buffer, len);
+	free(buffer);
 	return (ret);
 }

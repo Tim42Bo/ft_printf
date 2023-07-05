@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   myprint.h                                          :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tbornema <tbornema@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/05 12:01:39 by tbornema          #+#    #+#             */
-/*   Updated: 2023/06/05 12:01:39 by tbornema         ###   ########.fr       */
+/*   Created: 2023/07/05 18:56:50 by tbornema          #+#    #+#             */
+/*   Updated: 2023/07/05 18:56:50 by tbornema         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MYPRINT_H
-# define MYPRINT_H
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
 # include <unistd.h>
 # include <stdlib.h>
@@ -19,22 +19,6 @@
 # include <stdio.h>
 # include <stdarg.h>
 # include <stdint.h>
-
-typedef struct t_globalvariable
-{
-	char			c;
-	char			*buffer;
-	int				len;
-	int				i;
-	int				rem;
-	void			*varg;
-	int				iarg;
-	unsigned int	uarg;
-	int				integral;
-	int				num_digits;
-	int				digit;
-	unsigned int	nibble;
-}	t_globalvariable;
 
 int			ft_handle_char(va_list args);
 int			ft_handle_string(va_list args);

@@ -12,7 +12,18 @@
 
 #include "ft_printf.h"
 
-static t_globalvariable	g_lobal;
+int	ft_hexlen(unsigned	int num)
+{
+	int	len;
+
+	len = 0;
+	while (num != 0)
+	{
+		len++;
+		num = num / 16;
+	}
+	return (len);
+}
 
 int	ft_handle_hexadecimal(unsigned int num, int alphacase)
 {
@@ -34,5 +45,5 @@ int	ft_handle_hexadecimal(unsigned int num, int alphacase)
 		write(1, "0", 1);
 	else
 		ft_printhex(num, hexdig, numdig);
-	return (g_lobal.len);
+	return (ft_hexlen(num));
 }

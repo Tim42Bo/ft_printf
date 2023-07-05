@@ -6,13 +6,19 @@
 /*   By: tbornema <tbornema@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 04:57:49 by tbornema          #+#    #+#             */
-/*   Updated: 2023/06/08 11:45:32 by tbornema         ###   ########.fr       */
+/*   Updated: 2023/07/03 13:37:37 by tbornema         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static t_globalvariable	g_lol;
+struct s_lobal
+{
+	char			*buffer;
+	int				len;
+	int				i;
+	unsigned int	nibble;
+} g_bal;
 
 int	ft_ptrlen(uintptr_t num)
 {
@@ -29,8 +35,8 @@ int	ft_ptrlen(uintptr_t num)
 
 int	ft_initialize_buffer(const size_t buffer_len)
 {
-	g_lol.buffer = (char *)malloc(buffer_len);
-	if (!g_lol.buffer)
+	g_bal.buffer = (char *)malloc(buffer_len);
+	if (!g_bal.buffer)
 		return (-1);
 	else
 		return (0);
@@ -38,8 +44,8 @@ int	ft_initialize_buffer(const size_t buffer_len)
 
 void	ft_write_buffer(const size_t buffer_len)
 {
-	write(1, g_lol.buffer, buffer_len);
-	free(g_lol.buffer);
+	write(1, g_bal.buffer, buffer_len);
+	free(g_bal.buffer);
 }
 
 void	ft_handle_null_pointer(void)
@@ -61,16 +67,16 @@ size_t	ft_handle_non_null_pointer(void *ptr)
 	prefix_len = 2;
 	buffer_len = prefix_len + hex_len + 1;
 	ft_initialize_buffer(buffer_len);
-	g_lol.i = 0;
-	g_lol.buffer[0] = '0';
-	g_lol.buffer[1] = 'x';
-	while (g_lol.i < hex_len)
+	g_bal.i = 0;
+	g_bal.buffer[0] = '0';
+	g_bal.buffer[1] = 'x';
+	while (g_bal.i < hex_len)
 	{
-		g_lol.nibble = ((uintptr_t)addr >> ((hex_len - g_lol.i - 1) * 4) & 0xf);
-		g_lol.buffer[g_lol.i + prefix_len] = hexlower[g_lol.nibble];
-		g_lol.i++;
+		g_bal.nibble = ((uintptr_t)addr >> ((hex_len - g_bal.i - 1) * 4) & 0xf);
+		g_bal.buffer[g_bal.i + prefix_len] = hexlower[g_bal.nibble];
+		g_bal.i++;
 	}
-	g_lol.buffer[buffer_len - 1] = '\0';
+	g_bal.buffer[buffer_len - 1] = '\0';
 	ft_write_buffer(buffer_len);
 	return (buffer_len);
 }

@@ -12,23 +12,22 @@
 
 #include "ft_printf.h"
 
-static t_globalvariable	g_lobal;
-
 int	ft_handle_string(va_list args)
 {
 	char	*arg;
 	size_t	len;
 	int		returnlen;
+	char	*buffer;
 
 	returnlen = 0;
 	arg = va_arg(args, char *);
 	len = ft_strlen(arg);
-	g_lobal.buffer = (char *)malloc((len + 1) * sizeof(char));
-	if (!g_lobal.buffer)
+	buffer = (char *)malloc((len + 1) * sizeof(char));
+	if (!buffer)
 		return (-1);
-	ft_strncpy(g_lobal.buffer, arg, len);
-	g_lobal.buffer[len] = '\0';
-	returnlen = write(1, g_lobal.buffer, len);
-	free(g_lobal.buffer);
+	ft_strncpy(buffer, arg, len);
+	buffer[len] = '\0';
+	returnlen = write(1, buffer, len);
+	free(buffer);
 	return (returnlen);
 }

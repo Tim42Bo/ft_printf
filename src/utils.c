@@ -6,7 +6,7 @@
 /*   By: tbornema <tbornema@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 06:04:11 by tbornema          #+#    #+#             */
-/*   Updated: 2023/06/09 06:15:43 by tbornema         ###   ########.fr       */
+/*   Updated: 2023/07/03 13:30:07 by tbornema         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ size_t	ft_strlen(const char *str)
 	size_t	len;
 
 	len = 0;
-
 	while (str[len] != '\0')
 		len++;
 	return (len);

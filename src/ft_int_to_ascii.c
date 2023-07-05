@@ -12,18 +12,21 @@
 
 #include "ft_printf.h"
 
-static t_globalvariable	g_lobal;
+struct s_lobal
+{
+	int				i;
+	int				rem;
+} g_lobal;
 
 void	ft_int_to_ascii(long long num, char *str)
 {
 	int		is_negative;
-	size_t	i;
 
-	i = 0;
+	g_lobal.i = 0;
 	is_negative = 0;
 	if (num == 0)
 	{
-		str[i++] = '\0';
+		str[g_lobal.i++] = '\0';
 		return ;
 	}
 	if (num < 0)
@@ -34,11 +37,11 @@ void	ft_int_to_ascii(long long num, char *str)
 	while (num != 0)
 	{
 		g_lobal.rem = num % 10;
-		str[i++] = g_lobal.rem + '0';
+		str[g_lobal.i++] = g_lobal.rem + '0';
 		num = num / 10;
 	}
 	if (is_negative)
-		str[i++] = '-';
-	str[i] = '\0';
+		str[g_lobal.i++] = '-';
+	str[g_lobal.i] = '\0';
 	ft_strrev(str);
 }
