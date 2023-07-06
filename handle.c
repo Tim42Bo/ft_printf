@@ -51,14 +51,15 @@ int	ft_handle_placeholder_2(const char *fmt, va_list args)
 	}
 	else if (*fmt == '%')
 		len += ft_handle_percent();
-	 else
-	 	len += ft_handle_unknown(fmt);
+	else
+		len += ft_handle_unknown(fmt);
 	return (len);
 }
 
 int	ft_handle_placeholder(const char *fmt, va_list args)
 {
 	int	len;
+
 	if (*fmt == 's' || *fmt == 'c' || *fmt == 'p' || *fmt == 'd' || *fmt == 'i')
 		len = ft_handle_placeholder_1(fmt, args);
 	else

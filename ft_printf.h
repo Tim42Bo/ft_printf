@@ -19,6 +19,7 @@
 # include <stdio.h>
 # include <stdarg.h>
 # include <stdint.h>
+# include <limits.h>
 
 int			ft_handle_char(va_list args);
 int			ft_handle_string(va_list args);

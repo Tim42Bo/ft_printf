@@ -19,8 +19,6 @@ size_t	ft_numlen(long long num)
 	len = 0;
 	if (num == 0)
 		return (1);
-	if (num < 0)
-		len++;
 	while (num)
 	{
 		num /= 10;

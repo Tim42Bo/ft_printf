@@ -18,7 +18,6 @@ char	*ft_ulltoa(unsigned long long n)
 	unsigned long long	num;
 	int					len;
 
-	// str = '\0';
 	num = n;
 	len = 0;
 	while (num > 0)

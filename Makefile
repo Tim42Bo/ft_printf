@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: sung-hle <sung-hle@student.42berlin.de>    +#+  +:+       +#+         #
+#    By: tbornema <tbornema@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/08 11:09:15 by tbornema          #+#    #+#              #
-#    Updated: 2023/07/05 20:46:48 by sung-hle         ###   ########.fr        #
+#    Updated: 2023/07/06 11:12:10 by tbornema         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 

@@ -24,11 +24,6 @@ void	ft_int_to_ascii(long long num, char *str)
 
 	g_lobal.i = 0;
 	is_negative = 0;
-	if (num == 0)
-	{
-		str[g_lobal.i++] = '\0';
-		return ;
-	}
 	if (num < 0)
 	{
 		is_negative = 1;
@@ -40,8 +35,6 @@ void	ft_int_to_ascii(long long num, char *str)
 		str[g_lobal.i++] = g_lobal.rem + '0';
 		num = num / 10;
 	}
-	if (is_negative)
-		str[g_lobal.i++] = '-';
 	str[g_lobal.i] = '\0';
 	ft_strrev(str);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   putils.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sung-hle <sung-hle@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: tbornema <tbornema@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 04:57:49 by tbornema          #+#    #+#             */
-/*   Updated: 2023/07/05 21:22:17 by sung-hle         ###   ########.fr       */
+/*   Updated: 2023/07/06 11:13:08 by tbornema         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,6 @@ size_t	ft_handle_non_null_pointer(void *ptr)
 		g_bal.buffer[g_bal.i + prefix_len] = hexlower[g_bal.nibble];
 		g_bal.i++;
 	}
-	// g_bal.buffer[buffer_len - 1] = '\0';
 	ft_write_buffer(buffer_len);
 	return (buffer_len);
 }

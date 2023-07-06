@@ -20,6 +20,8 @@ int	ft_handle_unsigned_decimal(va_list args)
 	int				len;
 
 	num = va_arg(args, unsigned int);
+	if (!num)
+		return (write(1, "0", 1));
 	len = ft_uint_len(num);
 	buffer = (char *) malloc((len + 1) * sizeof(char));
 	if (!buffer)

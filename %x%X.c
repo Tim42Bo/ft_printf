@@ -31,6 +31,8 @@ int	ft_handle_hexadecimal(unsigned int num, int alphacase)
 	unsigned int	tmp;
 	int				numdig;
 
+	if (!num)
+		return (write(1, "0", 1));
 	tmp = num;
 	numdig = 0;
 	hexdig = ft_case(alphacase);

@@ -20,6 +20,8 @@ int	ft_handle_decimal(int arg)
 	char	*buffer;
 
 	neg = 0;
+	if (!arg)
+		return (write(1, "0", 1));
 	if (arg < 0)
 	{
 		neg = 1;
